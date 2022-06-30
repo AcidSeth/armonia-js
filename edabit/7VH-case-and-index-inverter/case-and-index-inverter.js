@@ -9,7 +9,7 @@ const invert = (s) => {
       return char.toUpperCase();
     }
   });
-  return (strReverse = caseReverse.join(""));
+  return caseReverse.join("");
 };
 
 // https://edabit.com/challenge/TYcMysG6yy4RKEQPP

@@ -3,10 +3,12 @@ function convert(deg) {
 
   if (deg.endsWith("°F")) {
     let c = (num[0] - 32) * (5 / 9);
-    return Math.round((c * 10) / 10) + "°C";
+    return Math.round(c) + "°C";
+
   } else if (deg.endsWith("°C")) {
     let f = num[0] * (9 / 5) + 32;
-    return Math.round((f * 10) / 10) + "°F";
+    return Math.round(f) + "°F";
+    
   } else {
     return "Error";
   }

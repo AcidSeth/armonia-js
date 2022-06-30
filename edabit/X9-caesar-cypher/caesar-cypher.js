@@ -5,13 +5,18 @@ const caesarCipher = (s, k) => {
     .join("");
 };
 
-const codeSet = (code) => (code < 97 ? 65 : 97);
+const A = 65;
+const Z = 90;
+const a = 97;
+const z = 122;
+
+const codeSet = (code) => (code < a ? A : a);
 const mod = (n, m) => ((n % m) + m) % m;
 
 const shiftChar = (char, k) => {
   const code = char.charCodeAt();
 
-  if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
+  if ((code >= A && code <= Z) || (code >= a && code <= z)) {
     return String.fromCharCode(
       mod(code + k - codeSet(code), 26) + codeSet(code)
     );
