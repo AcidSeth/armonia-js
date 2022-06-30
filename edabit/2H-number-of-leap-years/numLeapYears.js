@@ -3,9 +3,11 @@ function numLeapYears(years) {
   let count = 0;
   let start = parseInt(year[0]);
   let end = parseInt(year[1]);
+  
   for (let yr = start; yr <= end; ++yr) {
-    if ((yr % 4 === 0 && yr % 100 !== 0) || yr % 400 === 0) ++count;
+    if (yr % 4 === 0 && (yr % 100 !== 0 || yr % 400 === 0)) ++count;
   }
+  
   return count;
 }
 
